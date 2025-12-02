@@ -37,4 +37,10 @@ public class Banco
         var json = JsonSerializer.Serialize(Contas, options);
         File.WriteAllText(fullPath, json);
     }
+
+    // 👉 ESTE É O MÉTODO CORRETO
+    public Conta? BuscarConta(int numero)
+    {
+        return Contas.FirstOrDefault(c => c.Numero == numero);
+    }
 }
